@@ -5,7 +5,7 @@ import	librarysimulator.*;
 import librarysimulator.Action.Type;
 
 
-/**
+/*
  * 
  * INPUT FORMAT:
  * a number n represents the number of events
@@ -20,8 +20,8 @@ import librarysimulator.Action.Type;
  * 6 => readInLibrary
  * 
  * Adding A new Book:
- * 1	 123456 	P
- * 1	 123457 	H
+ * 1	P
+ * 1	H
  * 
  * The id of a book is a six digit number, and the letters and the end stand for,
  * P => printed, H => handwritten
