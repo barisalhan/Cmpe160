@@ -1,5 +1,7 @@
 package books;
 
+import librarymembers.LibraryMember;
+
 public abstract class Book {
 	
 	///bir tane kitap var.
@@ -9,7 +11,8 @@ public abstract class Book {
 	private int bookID;
 	private String bookType;
 	private boolean isTaken;
-	private String whoTake;
+	private LibraryMember whoTake;
+	
 	
 	//super i cagirmak icin burada constructor kodla.
 	public Book(int bookId, String bookType) {
@@ -17,7 +20,7 @@ public abstract class Book {
 		this.bookType = bookType;
 	}
 	
-	public abstract void returnBook();
+	public abstract void returnBook(LibraryMember member);
 	//return book'u abstract method olarak vereyim.
 
 	
@@ -38,11 +41,11 @@ public abstract class Book {
 		this.isTaken = isTaken;
 	}
 
-	public String getWhoTake() {
+	public LibraryMember getWhoTake() {
 		return whoTake;
 	}
 
-	public void setWhoTake(String whoTake) {
+	public void setWhoTake(LibraryMember whoTake) {
 		this.whoTake = whoTake;
 	}
 		

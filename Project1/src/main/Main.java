@@ -16,19 +16,19 @@ import librarysimulator.Action.Type;
  * 2 => addMember
  * 3 => borrowBook
  * 4 => returnBook
- * 5 => extendBook	//Test Case : almadigim kitabi extend etmek.
+ * 5 => extendBook
  * 6 => readInLibrary
  * 
  * Adding A new Book:
  * 1	P
  * 1	H
  * 
- * The id of a book is a six digit number, and the letters and the end stand for,
+ * The id of a book is a six digit number, and the letters at the end stand for,
  * P => printed, H => handwritten
  *
  * Adding a new member:
- * 2	123456		S
- * 2	123457		A
+ * 2	S
+ * 2	A
  * 
  * the id of a library member is a six digit number,
  * S => Student, A => Academic
@@ -51,8 +51,6 @@ import librarysimulator.Action.Type;
  *
  */
 
-
-//NOT:CONSTRUCTOR KONTROL, SUPER
 public class Main {
 	
 	public static void main(String[] args) {
@@ -88,7 +86,7 @@ public class Main {
 				action = new Action(Type.extendBook);
 				simulation.timerTick(action);
 			}
-			else{
+			else if(type==6){
 				action = new Action(Type.readInLibrary);
 				simulation.timerTick(action);
 			}
