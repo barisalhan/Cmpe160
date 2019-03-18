@@ -9,43 +9,61 @@ public class Printed extends Book
 	
 	private final static String bookType = "P";
 	
+	private int deadLine;
+	private boolean isExtended = false;
+	
 	public Printed(int bookId)
 	{
 		super(bookId, bookType);
 	}
 
 	@Override
-	public void readBook(LibraryMember member, Book book) {
-		// TODO Auto-generated method stub
-		
+	public void readBook(LibraryMember member) {
+		this.setTaken(true);
+		this.setWhoTake(member);
+		member.addToBookHistory(this);
+	}
+	
+	@Override
+	public void borrowBook(LibraryMember member, int tick) {
+		this.setTaken(true);
+		this.setWhoTake(member);
+		this.setDeadLine(member.getTimeLimit() + tick);
+		member.addToBookHistory(this);
+		member.setCurrentNumberOfBooks(member.getCurrentNumberOfBooks()+1);
 	}
 
 	@Override
-	public void borrowBook(LibraryMember member, Book book) {
-		// TODO Auto-generated method stub
-		
+	public void extend(LibraryMember member, int tick) {
+		this.setExtended(true);
+		this.setDeadLine(member.getTimeLimit() + tick);
+	}
+	
+	@Override
+	public void returnBook(LibraryMember member) {
+		this.setTaken(false);
+		//THESE LINES MAY BE EXPLAINED IN THE DOCUMENT CAREFULLY!
+		this.setWhoTake(null);
+		this.setDeadLine(0);
+		this.setExtended(false);
+		member.setCurrentNumberOfBooks(member.getCurrentNumberOfBooks()-1);
 	}
 
-	@Override
-	public void extend(LibraryMember member) {
-		// TODO Auto-generated method stub
-		
+	public boolean isExtended() {
+		return isExtended;
 	}
 
-	@Override
-	public void payFee(LibraryMember member) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void returnBook() {
-		// TODO Auto-generated method stub
-		
+	public void setExtended(boolean isExtended) {
+		this.isExtended = isExtended;
 	}
 	
 
-	
-	
+	public int getDeadLine() {
+		return deadLine;
+	}
+
+	public void setDeadLine(int deadLine) {
+		this.deadLine = deadLine;
+	}
 	
 }

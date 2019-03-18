@@ -1,8 +1,5 @@
 package librarysimulator;
 
-import java.util.Scanner;
-
-import books.Book;
 import library.Library;
 import librarysimulator.Action;
 /**
@@ -37,13 +34,13 @@ public class LibrarySimulator {
 			library.addMember();
 		}
 		else if(action.getType()==Action.Type.borrowBook) {
-			library.borrowBook();
+			library.borrowBook(tick);
 		}
 		else if(action.getType()==Action.Type.returnBook) {
-			library.returnBook();
+			library.returnBook(tick);
 		}
 		else if(action.getType()==Action.Type.extendBook) {
-			library.extendBook();
+			library.extendBook(tick);
 		}
 		else if(action.getType()==Action.Type.readInLibrary) {
 			library.readInLibrary();

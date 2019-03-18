@@ -13,15 +13,16 @@ public class Handwritten extends Book
 	}
 
 	@Override
-	public void readBook(LibraryMember member, Book book) {
-		// TODO Auto-generated method stub
-		
+	public void readBook(LibraryMember member) {
+		this.setTaken(true);
+		this.setWhoTake(member);
+		member.addToBookHistory(this);
 	}
 
 	@Override
-	public void returnBook() {
-		// TODO Auto-generated method stub
-		
+	public void returnBook(LibraryMember member) {
+		this.setTaken(false);
+		this.setWhoTake(null);
 	}
 	
 	
