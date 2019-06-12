@@ -446,7 +446,7 @@ public final class ExamTestCase extends ExamTest{
 		
 		try {
 			String answerStudent = "not success";
-			if(l.totalFee == 11) {
+			if(l.totalFee == 12) {
 				answerStudent = "success";
 			}
 			ExamTest.testCheck(answerStudent);
@@ -515,7 +515,7 @@ public final class ExamTestCase extends ExamTest{
 		
 		try {
 			String answerStudent = "not success";
-			if(l.totalFee == 11) {
+			if(l.totalFee == 12) {
 				answerStudent = "success";
 			}
 			ExamTest.testCheck(answerStudent);
@@ -584,7 +584,7 @@ public final class ExamTestCase extends ExamTest{
 		
 		try {
 			String answerStudent = "not success";
-			if(l.totalFee == 13) {
+			if(l.totalFee == 14) {
 				answerStudent = "success";
 			}
 			ExamTest.testCheck(answerStudent);
