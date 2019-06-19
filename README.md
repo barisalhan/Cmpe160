@@ -1,4 +1,4 @@
-# Cmpe160-TeachingAssistantProject
+# Cmpe160-TeachingAssistantProject  (JAVA PROJECT)
 
 This is a project that simulates a typical library with daily ongoing operations. I have developed this project in Java while I was a teaching assistant in Cmpe160-Object Oriented Programming. After deleting some parts of the code, it is given to students as a homework project to complete the missing parts.
 
